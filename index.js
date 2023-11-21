@@ -14,7 +14,9 @@ app.use((req, res, next) => {
     res.status(404).sendFile(path.join(__dirname, 'templates', '404.html'));
 });
 
-app.listen(3000, () => {
-    console.log("Сервер починає прослуховувати підключення на порт 3000...")
-});
+port = process.env.PORT || 3000 
+app.listen(port, () => { 
+ console.log("Listening on " + port) 
+}) 
+
 
